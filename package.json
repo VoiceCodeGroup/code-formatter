@@ -1,0 +1,15 @@
+{
+  "name": "dialogflow-service",
+  "scripts": {
+    "start": "micro -l tcp://0.0.0.0:${PORT-3002}",
+    "dev": "micro-dev"
+  },
+  "dependencies": {
+    "micro": "latest",
+    "micro-cors": "^0.1.0",
+    "prettier": "^1.13.5"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  }
+}
