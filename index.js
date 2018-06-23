@@ -15,9 +15,7 @@ const handler = async req => {
     // remove leading semicolon
     formattedCode = formattedCode.slice(1);
   }
-  return formattedCode;
-
-  return beautify(code, bOptions);
+  return { formattedCode };
 };
 
 module.exports = cors(handler);
