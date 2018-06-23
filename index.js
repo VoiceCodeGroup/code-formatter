@@ -8,7 +8,14 @@ const handler = async req => {
 
   const code = data.code;
   const options = data.options;
-  return prettier.format(code, options).slice(1);
+  const mode = data.mode;
+
+  let formattedCode = prettier.format(code, options);
+  if (mode === 'html') {
+    // remove leading semicolon
+    formattedCode = formattedCode.slice(1);
+  }
+  return formattedCode;
 
   return beautify(code, bOptions);
 };
